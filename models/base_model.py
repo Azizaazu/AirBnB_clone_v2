@@ -17,7 +17,13 @@ class BaseModel:
     updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())
 
     def __init__(self, *args, **kwargs):
-        """Instatntiates a new model"""
+        """Instatntiates a new model
+	kwargs: arguments for the constructor of the BaseModel
+	args: won't be used
+	id: id
+	created_at: date creation 
+	updated_at: update date
+	"""
          if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
