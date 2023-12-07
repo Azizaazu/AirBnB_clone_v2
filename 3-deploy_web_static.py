@@ -2,11 +2,11 @@
 """Create and distributes an archive to web servers"""
 import os.path
 import time
-from fabric.api import local
+from fabric.api import *
 from fabric.operations import env, put, run
 
 env.hosts = ['44.210.150.159', '35.173.47.15']
-
+env.user = 'ubuntu'
 
 def do_pack():
     """Generate an tgz archive from web_static folder"""
